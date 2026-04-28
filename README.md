@@ -484,7 +484,8 @@ Update 2: Fabrication completed and for the components we had to replace I2C LCD
 <img src="images/Update2_Fabrication.jpeg" width="400"/>
 
 Update 3: completed with the circuit connections. We had problem with the working of I/O Shield so we again replaced it with I2C LCD Dislay. We found out that we were using I2C0 instead of I2C1 communication and our Vicharak Shrike Lite only supports I2C1.
-<img src="images/Update2_Connections.jpeg" width="400"/>
+<img src="images/Update2_connections complete.jpeg" width="400"/>
+
 
 ---
 
