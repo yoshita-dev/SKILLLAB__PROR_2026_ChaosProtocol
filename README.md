@@ -454,11 +454,11 @@ Expected outcomes:
 
 Update 1: Basic connections started with fabrication.
 <img src="images/Update1_Testing.jpeg" width="400"/>
-<img src="images/Update1_Fabrication.jpeg" width="400" />
+<img src="images/Update1_Fabrication.jpeg" width="400"/>
 
 Update 2: Fabrication completed and for the components we had to replace I2C LCD with 7 segment display.
-
-
+<img src="images/Update2_Connections.jpeg" width="400"/>
+<img src="images/Update2_Fabrication.jpeg" width="400"/>
 
 
 
