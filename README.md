@@ -16,7 +16,7 @@
 | `Yoshita Vishwakarma`  | `[Design]`   | `[Documentation]`     | `Documentation, Project Design `    |
 | `Poorab Valecha`  | `[Electronics]`   | `[Documentation]`     | `Hardware, Material Handling`    |
 | `Vansh Lalwani`  | `[Electronics]`   | `[Coding]`     | `Hardware, Problem Solving`    |
-<img width="1600" height="1131" alt="image" src="images/Defuse or Die.png" />
+<img width="1600" height="1131" alt="image" src="images/Group Photo.jpeg" />
 ## 1.3 Project Title
 
 `"Defuse Or Die by Chaos Protocol"`
