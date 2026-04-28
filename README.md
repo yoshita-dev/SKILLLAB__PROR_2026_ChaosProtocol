@@ -6,7 +6,7 @@
 
 ## 1.1 Studio / Group Name
 
-`Project^2`
+`Chaos Protocol`
 
 ## 1.2 Team Members
 
@@ -21,13 +21,12 @@
 
 `"Defuse Or Die by Chaos Protocol"`
 
-`(because Project-or)`
 
 <img width="1600" height="1131" alt="image" src="images/Defuse or Die.png" />
 
 ## 1.4 One-Line Pitch
 
-`A projected, fully customizable time portal where engineering education is done through PUBG battlefield in the comfort of our home`
+`A high-stakes, Two player bomb defusal game where every second, every choice, and every word could mean the difference between victory… or explosion.`
 
 ## 1.5 Expanded Project Idea
 
