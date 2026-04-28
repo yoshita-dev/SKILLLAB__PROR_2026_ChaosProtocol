@@ -310,38 +310,47 @@ Suggested sequence:
 
 | Item                             | Quantity | In Kit? | Need to Buy? | Estimated Cost | Material / Spec               | Why This Choice?          |
 | -------------------------------- | --------:| ------- | ------------ | --------------:| ----------------------------- | ------------------------- |
-| `[ESP32]`                        | `1`      | `Yes`   | `No`         | `0`            | `38 Pin ESP32`                | `[To control components]` |
-| `[Motor Driver]`                 | `[1]`    | `[Yes]` | `[No]`       | `0`            | `[LN296]`                     | `[To drive both motors]`  |
-| `[DC Motors and wheel]`          | `[2]`    | `[No]`  | `[Yes]`      | `[150]`        | `[BO Motors and 6 cm wheels]` | `[high torque motors]`    |
-| `[Buck Converter]`               | `[1]`    | `[No]`  | `[Yes]`      | `[75]`         |                               |                           |
-| `[Li-ion batteries with holder]` | `[1]`    | `[No]`  | `[Yes]`      | `[200]`        |                               |                           |
+| `[Raspberry Pi Pico]`            | `[1]`      | `Yes`   | `No`         | `0`            |                                | `[To control components]` |
+| `[Buzzers]`                      | `[1]`    | `[Yes]` | `[No]`       | `0`            |                                  | `[audio alert]`  |
+| `[LEDs]`                         | `[5]`    | `[Yes]`  | `[No]`      | `[0]`        |                                 | `[visual feedback]`    |
+| `[I2C LCD Display]`              | `[1]`    | `[Yes]`  | `[No]`      | `[0]`         |                               |    `[status display]`    |
+| `[Push Button]`                  | `[4]`    | `[Yes]`  | `[No]`      | `[0]`        |                               |  `[user input]`     |
+| `[MQ2 Sensors]`                  | `[1]`    | `[Yes]`  | `[No]`      | `[0]`        |                               |   `[gas sensing]`   |
+| `[Breadboard]`                   | `[1]`    | `[Yes]`  | `[No]`      | `[0]`        |                               |    `[quick prototyping]`   |
+| `[Touch Sensor]`                 | `[1]`    | `[Yes]`  | `[No]`      | `[0]`        |                               |   `[touch detections]`    |
 
 ## 11.2 Material Justification
 
 Explain why you selected your main materials and components.
 
 **Response:**  
-`DC motors (BO motors) were chosen instead of servos or steppers because the system requires continuous rotation for movement rather than precise angular control (Previously, we were considering using steppers as we were planning on tracking movement on the ESP using its relative position from an origin, but since we're using a camera now, this is not required). A motor driver (L298N) was used to allow bidirectional control and speed variation using PWM.`
+
+`We selected the Raspberry Pi Pico because it is a compact and cost-effective microcontroller capable of handling multiple sensors and outputs simultaneously, making it ideal for a multi-module game system. A breadboard and jumper wires were used to enable quick, solderless connections, allowing us to prototype and modify our circuit easily within the limited hackathon time.
+
+For user interaction and feedback, we used an I/O Shield to display the timer and clearly while minimizing wiring complexity. LEDs and a buzzer were included to provide immediate visual and audio feedback, enhancing the urgency and user experience. Resistors were necessary to ensure safe operation by controlling current flow.
+
+To make the game interactive, we used push buttons, touch sensors, and wire connections for intuitive input methods, while the MQ2 sensor was incorporated to introduce a unique, sensor-based challenge beyond basic inputs.
+
+For construction, cardboard was chosen as the main material because it is lightweight, low-cost, and easy to shape, allowing rapid prototyping. Supporting materials like tape, glue, and colored markings help in assembly and improve clarity.`
 
 
 ## 11.3 Items You chose
 
-| Item                 | Why Needed               | Purchase Link | Latest Safe Date to Procure | Status       |
-| -------------------- | ------------------------ | ------------- | --------------------------- | ------------ |
-| `BO Motors + Wheels` | `Drive system for car`   | `robu.in`     | `15th April`                | `[Received]` |
-| `Buck Converter`     | `Stable power for ESP32` | `local store` | `before testing`            | `[Received]` |
-| `Li-ion Batteries`   | `Portable power`         | `local store` | `before testing`            | `Recieved`   |
+| Item                 | Why Needed               | 
+| -------------------- | ------------------------ |
+| `MQ2 Gas Sensor` | `Gas Sensing`   |
+| `Touch Sensor(TTP223)`     | `Touch Detection` |
+| `Push Button`   | `Input`         | 
 
 ## 11.4 Budget Summary
 
 | Budget Item           | Estimated Cost              |
 | --------------------- | ---------------------------:|
-| Electronics           | `[400]`                     |
-| Mechanical parts      | `[200]`                     |
-| Fabrication materials | `[0 (Available on campus)]` |
+| Electronics           | `[Available on campus]`                     |
+| Mechanical parts      | `[Available on campus]`                     |
+| Fabrication materials | `[Available on campus]` |
 | Purchased extras      | `[0]`                       |
-| Contingency           | `[300]`                     |
-| **Total**             | `[900]`                     |
+| **Total**             | `[0]`                     |
 
 ## 11.5 Budget Reflection
 
@@ -443,8 +452,14 @@ Expected outcomes:
 | Week 3 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
 | Week 4 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
 
-Basic Connections 
-<img width="1600" height="1200"  alt="image" src="images/Early Sketch.jpeg" src="" />
+Update 1: Basic connections started with fabrication.
+<img src="images/Update1_Testing.jpeg" width="400"/>
+<img src="images/Update1_Fabrication.jpeg" width="400" />
+
+Update 2: Fabrication completed and for the components we had to replace I2C LCD with 7 segment display.
+
+
+
 
 
 ---
