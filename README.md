@@ -69,7 +69,8 @@ List what inspired the project.
 
 What makes your project original?
 
-**Response:**  
+**Response:Defuse or Die isn’t the idea of a bomb-defusal game itself—it’s how we've translated a digital concept into a fully physical, low-cost, sensor-driven experience with real-time unpredictability.
+Instead of copying Keep Talking and Nobody Explodes on a screen, our project creates a tangible, hands-on system using cardboard modules, MQ2 gas sensing, touch inputs, and servo mechanisms.**  
 
 
 ---
