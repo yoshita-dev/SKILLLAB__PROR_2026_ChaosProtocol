@@ -2,41 +2,8 @@
 
 ## Final Project README
 
-> **Project Weight:** 100%  
-> **Team Size:** 4/3 students  
-> **Project Duration:** 8 hours  
-> **Total Time Available:** 32 effort-hours per team  
-> **Project Type:** Playful, interactive, technology-based experience
 
----
-
-# Before you begin
-
-## Fork and rename this repository
-
-After forking this repository, rename it using the format:
-
-`SKILLLAB_PROR-2026-TeamName`
-
-### Example
-
-`SKILLLAB_PROR-2026-AuroWizards`
-
-Do not keep the default repository name.
-
----
-
-# How to use this README
-
-This file is your team’s **working project document**.
-
-You must keep updating it throughout the build period.  
-By the final review, this README should clearly show:
-
-- your idea,
-- your planning,
-- your design decisions,
-- your technical process,
+cess,
 - your build progress,
 - your testing,
 - your failures and changes,
@@ -63,12 +30,13 @@ By the final review, this README should clearly show:
 
 | Name           | Primary Role                    | Secondary Role | Strengths Brought to the Project |
 | -------------- | ------------------------------- | -------------- | -------------------------------- |
-| `Gopalakrishnan` | `[Electronics / Coding / App ]` | `Documentation`  | `Documentation, Gift of Gab `|
-| `KAder Shaikh`  | `[Electronics / Fabrication]`   | `[Coding]`     | `Material Handling, Hardware`    |
-
+| `Dhruv Singh` | `[Coding]`                       | `Electronics`  | `Coding, Ideation `|
+| `Yoshita Vishwakarma`  | `[Design]`   | `[Documentation]`     | `Documentation, Project Design `    |
+| `Poorab Valecha`  | `[Electronics]`   | `[Documentation]`     | `Hardware, Material Handling`    |
+| `Vansh Lalwani`  | `[Electronics]`   | `[Coding]`     | `Hardware, Problem Solving`    |
 ## 1.3 Project Title
 
-`"Project Project"`
+`"Defuse Or Die by Chaos Protocol"`
 
 `(because Project-or)`
 
