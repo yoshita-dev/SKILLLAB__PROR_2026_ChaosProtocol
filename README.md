@@ -408,8 +408,8 @@ Expected outcomes:
 
 Expected outcomes:
 
-- [x] Electronics tests completed
-- [ ] CAD / structure planning completed
+- [ ] Electronics tests completed
+- [x] CAD / structure planning completed
 - [ ] App UI started if needed
 - [x] Mechanical concept tested
 - [x] Main subsystems partially working
@@ -438,10 +438,14 @@ Expected outcomes:
 
 | Week   | Planned Goal   | What Actually Happened | What Changed   | Next Steps     |
 | ------ | -------------- | ---------------------- | -------------- | -------------- |
-| Week 1 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
-| Week 2 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
+| Hour 1 | `[Idea Finalized]` | `[Idea Finalized]`         | `[NA]` | `[Component Finalization]` |
+| Hour 2 | `[Component Finalization]` | `Components Finalized]`         | `[Shrike Lite not working]` | `[Connections]` |
 | Week 3 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
 | Week 4 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
+
+Basic Connections 
+<img width="1600" height="1200"  alt="image" src="images/Early Sketch.jpeg" src="" />
+
 
 ---
 
