@@ -237,7 +237,7 @@ Insert a hand-drawn or software-made circuit diagram.
 
 **Insert image below:**  
 `[Upload image and link here]`
-<img width="867" height="1156" alt="image" src="circuit diagram.png" />
+<img width="1600" height="1200"  alt="image" src="images/circuit diagram.jpeg" src="" />
 
 
 # 9. Power Plan
@@ -288,7 +288,7 @@ Suggested sequence:
 - error handling.
 
 **Insert image below:**  
-<img width="1600" height="1200" alt="image" src="Flowchart.jpeg" />
+<img width="1600" height="1200"  alt="image" src="images/Flowchart.jpeg" src="" />
 <img width="1600" height="1200" alt="image" src="" />
 
 
