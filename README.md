@@ -255,42 +255,20 @@ Insert a hand-drawn or software-made circuit diagram.
 
 | Tool / Platform                | Purpose                                        |
 | ------------------------------ | ---------------------------------------------- |
-| `[MicroPython]`                | `Control ESP32`                                |
-| `[Python/PyGame/OpenCV]`       | `Track markers, game logic, create projection` |
-| `[Fusion/Blender/Illustrator]` | `[Prototyping structure]`                      |
-|                                |                                                |
+| `[C++]`                | `control Raspberry Pi Pico2 `                                |
 
 ## 10.2 Software Logic
 
-Describe what the code must do.
-
-Include:
-
-- startup behavior,
-- input handling,
-- sensor reading,
-- decision logic,
-- output behavior,
-- communication logic,
-- reset behavior.
-
 **Response:**  
-`
+`At **startup**, the system initializes all components including the LCD, sensors, buttons, buzzer, and LEDs, sets the timer and strike count to default values, and generates randomized but valid rules for each module so every game session is different.
 
-- **Startup behavior:**  
-  The ESP32 initializes motor pins, PWM control, and starts a WiFi access point with a web server. The laptop initializes camera input, tracking system, and projection mapping.
-- **Input handling:**  
-  Movement commands are received from the laptop (pygame sends http requests)
-- **Sensor reading:**  
-  The camera continuously captures frames, and OpenCV detects ArUco markers to determine the car’s position and orientation.
-- **Decision logic:**  
-  The system maps the car’s position into a virtual coordinate system and checks for nearby obstacles or collisions. If movement is valid, the command is allowed; if not, it is blocked or replaced with a feedback action (like a slight shake).
-- **Output behavior:**  
-  The ESP32 drives the motors using PWM signals to control speed and direction. The projector displays the updated game environment, including obstacles, targets, and feedback visuals.
-- **Communication logic:**  
-  The laptop sends HTTP requests (e.g., `/forward`, `/left`) to the ESP32 over WiFi. The ESP32 parses these commands and executes motor actions.
-- **Reset behavior:**  
-  If no command is received within a short timeout, the ESP32 stops the motors. The game resets when a level is completed or restarted.`
+For **input handling**, the code continuously monitors all user inputs such as button presses, touch sensors, and wire connections without blocking other operations. In parallel, it performs **sensor reading**, especially from the MQ2 sensor, to detect changes in gas levels and determine whether the required condition has been met.
+
+The **decision logic** compares user actions and sensor values against the pre-generated rules to determine whether a step is correct or incorrect. Based on this, it updates the game state, such as marking modules as solved or increasing the strike count and reducing time in case of errors.
+
+For **output behavior**, the system updates the LCD with the remaining time and strikes, controls LEDs for visual feedback, and adjusts the buzzer frequency dynamically to create urgency as time decreases. In terms of **communication logic**, the system communicates game status clearly through the display and feedback mechanisms, allowing players to understand what is happening in real time.
+
+Finally, for **reset behavior**, the system can restart the game by reinitializing all variables, regenerating rules, resetting the timer and strikes, and preparing all modules for a new round without needing to reprogram the device.`
 
 ## 10.3 Code Flowchart
 
@@ -494,8 +472,8 @@ Update 3: completed with the circuit connections. We had problem with the workin
 ## 14.1 Risk Register
 
 | Risk                                                            | Type         | Likelihood | Impact   | Mitigation Plan                                                                       | Owner                |
-| --------------------------------------------------------------- | ------------ | ---------- | -------- | ------------------------------------------------------------------------------------- | -------------------- |
-| WiFi connection between laptop and ESP32 becomes unstable       | `Technical`  | `Medium`   | `High`   | Keep ESP32 close, ensure stable power supply, reduce network load, add fail-safe stop | `[Gopal]`           |
+| I2C not working              |        dhruv         | technical | medium       |     high       | we used I2C1 instead of I2C0 |
+
 
 
 ## 14.2 Biggest Unknown Right Now
@@ -503,6 +481,7 @@ Update 3: completed with the circuit connections. We had problem with the workin
 What is the single biggest uncertainty in your project at this stage?
 
 **Response:**  
+The single biggest uncertainty in our project is ensuring smooth, real-time coordination between all modules without delays or conflicts. Since multiple inputs (buttons, touch sensors, MQ2, wires) and outputs (LCD, buzzer, LEDs) must operate simultaneously, managing everything with non-blocking logic on the Raspberry Pi Pico can be challenging. Any timing issue or unexpected sensor behavior could affect gameplay flow, so maintaining reliable synchronization under real-time conditions is our main concern.
 
 
 ---
@@ -513,22 +492,22 @@ What is the single biggest uncertainty in your project at this stage?
 
 | What Needs Testing     | How You Will Test It                                                                 | Success Condition                                                                                    |
 | ---------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
-| `[Wifi connection]`    | `[Check if motor spins via app button]`                                              | `[Both motors accurately respond to wifi signals]`                                                   |
+| `[LCD Display output]`    | `[check if the connections are proper and the compiled code is displaying the output ]`                                              | `[the display is showing the output]`                                                   |
                        |
 ## 15.2 Testing and Debugging Log
 
 | Date          | Problem Found                         | Type         | What You Tried                                | Result               | Next Action                                    |
 | ------------- | ------------------------------------- | ------------ | --------------------------------------------- | -------------------- | ---------------------------------------------- |
-| `18th April`  | `Car not balancing properly`          | `Mechanical` | `Add low-friction caster support to one side` | `Worked`             | `improve caster structure`                     |
+| `28th April`  | `I2C LCD not showing display`          | `Mechanical` | `replaced it to I/O Shield` | `didnt work`             | `had to replace it again to I2C LCD by changing its connections and finally getting the display output.`                     |
 
 
 ## 15.3 Playtesting Notes
 
 | Tester      | What They Did                        | What Confused Them                    | What They Enjoyed                         | What You Will Change                          |
 | ----------- | ------------------------------------ | ------------------------------------- | ----------------------------------------- | --------------------------------------------- |
-| `Gopal` | `Tried navigating through obstacles` | `Some obstacles ewren't clear enough` | `Liked projection + real car interaction` | `Add a slight red highlight around obstacles` |
+| `Vansh` | `tried getting the display output on I2C LCD` | `didnt connect the pins correctly` | `NA` | `Cchanged the pins from I2C0  to I2C1` |
 
-
+| `DHRUV` | `LCD not working` | `LEDs were getting burnt` | `NA` | `didnt get the solution as time got over` |
 ---
 
 # 16. Build Documentation
@@ -570,21 +549,24 @@ Suggested images:
 Describe the final version of your project.
 
 **Response:**  
+The final version of **Defuse or Die** is a compact, cardboard-built bomb defusal game that feels like a real, hands-on challenge rather than just a tech demo. Inside the box, everything is powered by a Raspberry Pi Pico, while the top surface has different interactive modules like wires to cut, buttons to press, touch sensors, and even a gas sensor. There’s a small LCD screen showing the countdown and number of mistakes, and as time runs out, the buzzer gets faster and the LEDs react, creating a sense of urgency that keeps everyone on edge.
 
+What really makes it special is the experience. One person is physically interacting with the device, while the others guide them using instructions, which leads to a lot of fast-paced communication and chaos—in a fun way. Every round feels different because the challenges are slightly randomized, so it never gets boring. It’s simple in terms of materials, but the combination of physical interaction, pressure, and teamwork makes it feel like a complete and engaging game rather than just a circuit project.
 
 ## 17.2 What Works Well
 
-
+The touch sensor, MQ2 gas sensor and LEDs are working well in our project.
 
 ## 17.3 What Still Needs Improvement
 
+The internal connection and overall design can be made better, and can be arranged in a more organised way. 
 
 ## 17.4 What Changed From the Original Plan
 
 How did the project change from the initial idea?
 
 **Response:**  
-
+Initially the I2C LCD Display was not working so we had to shift to the I/O Shiled for the display output of the timers but then it complicated the connections so we decided to go with the LCD connection only where we later got to know we were doing wrong connections which made the LCD not work but eventually we worked on that and resolved the problem.
 
 ---
 
@@ -597,42 +579,46 @@ What slowed you down?
 How well did you manage time, tasks, and responsibilities?
 
 **Response:**  
+We worked well as a team when it came to dividing tasks and staying focused on the core idea. We didn’t overcomplicate the project and made sure to prioritize the main features like the timer, modules, and interaction. Our coordination during the build and testing phase was strong, which helped us get a working prototype within the time limit.
 
+What slowed us down:
+The main delays came from the testing of I2C LCD. Since multiple components had to work together in real time, even small mistakes in connections or logic caused unexpected problems. We also spent extra time fine-tuning the non-blocking code to make sure everything ran smoothly without delays.
+
+Time, task, and responsibility management:
+Overall, we managed time fairly well by splitting responsibilities between hardware, coding, and design. However, some tasks took longer than expected, especially integration. Even then, we adapted quickly, reallocated tasks when needed, and ensured that we completed a functional and presentable project by the end.
 
 ## 18.2 Technical Reflection
 
-What did you learn about:
-
-- electronics,
-- coding,
-- mechanisms,
-- fabrication,
-- integration?
-
 **Response:**  
 
+Electronics:
+We learned how to properly connect and manage multiple components like sensors, LEDs, and displays on a microcontroller, and the importance of correct wiring, grounding, and current limiting for stable performance.
+
+Coding:
+We learned how to write efficient, non-blocking code using timing functions so that multiple modules can run simultaneously without freezing the system, and how to structure logic for real-time interaction.
+
+Mechanisms:
+We understood how simple mechanical elements, like switches, wire connections, and moving parts, can be used to create interactive and engaging gameplay experiences.
+
+Fabrication:
+We learned how to quickly design and build a functional structure using cardboard, including planning layouts, cutting accurately, and assembling components securely within time constraints.
+
+Integration:
+We learned how to combine hardware, software, and physical design into one cohesive system, and how challenging it can be to make everything work together smoothly in real time.
 
 ## 18.3 Design Reflection
 
-What did you learn about:
-
-- designing ,
-- delight,
-- clarity,
-- physical interaction,
-- understanding,
-- iteration?
 
 **Response:**  
 
+We learned that effective designing is about keeping things simple and focusing on usability rather than adding unnecessary features. We also realized that small elements like sound, lights, and responsive feedback play a big role in creating delight and making the experience memorable. Clarity is crucial, as users should be able to quickly understand the instructions and interact with the system without confusion. Through this project, we saw how physical interaction makes the experience far more engaging compared to purely digital systems, as users feel more involved. We also understood the importance of making the system intuitive so that users can grasp how it works almost instantly. Finally, we learned that iteration is key—testing, identifying issues, and continuously improving the design is essential to creating a smooth and enjoyable experience.
 
 ## 18.4 If You Had One More hour
 
-What would you improve next?
 
 **Response:**  
 
-` `
+`If we had one more hour, we would have focused on refining and polishing the overall experience rather than adding new features. We would improve the wiring and internal layout to make it cleaner and more reliable, fine-tune the timing and difficulty of the modules, and smooth out any remaining bugs in the code. We’d also enhance the user experience by improving labels, instructions, and visual feedback so everything is clearer and more intuitive during gameplay. Finally, we would spend time stress-testing the system to ensure consistent performance and a more seamless, professional demo `
 
 ---
 
