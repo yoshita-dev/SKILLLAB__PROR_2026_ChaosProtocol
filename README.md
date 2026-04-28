@@ -166,7 +166,7 @@ Include:
 Add an early sketch of the full idea.
 
 **Insert image below:**  
-`[Upload image and link here]`
+<img width="1600" height="1200" alt="image/Early Sketch.jpeg" src="" />
 
 Example:
 
