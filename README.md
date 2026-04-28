@@ -213,11 +213,21 @@ Example:
 Describe the main electrical connections.
 
 **Response:**  
-`The ESP32 is connected to the motor driver (L298N) using four GPIO pins (18,19; 22,23) to control motor direction (IN1, IN2, IN3, IN4). Two PWM-capable pins (ENA and ENB; 25 and 26) are connected to control the speed of each motor.
+The **Raspberry Pi Pico** acts as the central controller, where all components are connected to its GPIO pins. Power is distributed using the **3.3V pin (Pin 36)** for most modules and a **common GND (Pin 38)** shared across all components to ensure stable and accurate signal referencing.
 
-The motors are connected to the output terminals of the motor driver. The motor driver is powered directly by the battery pack (higher voltage), while the ESP32 receives regulated 5V from the buck converter.
+The **I2C LCD** is connected using the I2C protocol to reduce wiring complexity. Its **VCC is connected to 3.3V**, **GND to ground**, **SDA to GP4 (Pin 6)**, and **SCL to GP5 (Pin 7)**. This allows the Pico to send data using just two communication lines while displaying the timer and game status.
 
-All components share a common ground to ensure stable operation. The projector and camera are connected to the laptop, which handles tracking and game logic separately.`
+The **push button** is connected between **GP14 (Pin 19)** and **GND**, and it uses the Pico’s internal pull-up resistor. This means the pin reads HIGH normally and goes LOW when the button is pressed, ensuring reliable input detection without extra components.
+
+The **touch sensor (TTP223)** is powered by **3.3V and GND**, with its output connected to **GP15 (Pin 20)**. It sends a HIGH signal when touched, allowing smooth and responsive input without mechanical wear.
+
+The **wire-cutting module** uses GPIO pins like **GP2 (Pin 4), GP3 (Pin 5), and GP6 (Pin 9)**. Each wire connects the pin to **GND**, and internal pull-ups keep the signal HIGH. When a wire is cut, the connection breaks and the change in signal is detected, simulating real defusal actions.
+
+The **MQ2 gas sensor** is connected with **VCC to 3.3V, GND to ground**, and its analog output connected to **GP26 (Pin 31 / ADC0)**. This allows the Pico to read varying gas levels as analog values, adding a dynamic sensing element to the game.
+
+The **LEDs** are connected to GPIO pins such as **GP16 (Pin 21) and GP17 (Pin 22)** through **current-limiting resistors (220Ω)**. These LEDs provide visual feedback for correct or incorrect actions and game states.
+
+The **buzzer** is connected to **GP18 (Pin 24)**, which supports PWM output. This allows the system to generate different beep patterns and increase frequency as the timer runs out, creating urgency.`
 
 ## 8.3 Circuit Diagram
 
@@ -364,36 +374,48 @@ If your cost is too high, what can be simplified, removed, substituted, or share
 
 ## 12.1 Team Working Agreement
 
-Write how your team will work together.
-
-Include:
-
-- how tasks are divided,
-- how decisions are made,
-- how progress will be checked,
-- what happens if a task is delayed,
-- how documentation will be maintained.
-
 **Response:**  
+How tasks are divided
 
+We divided the task by first knowing the strength of each team memeber and alloting the respective work along with their strength
+
+How decisions are made
+
+We collectviely discuss the new solution or feature and vote whether we can do it or not
+
+How progress will be checked
+
+We update the log book hourly or whenever we do a change or improve our project
+
+What happens if a task is delayed
+
+If the task is delayed firstly we sit together and find the issue and try to solve it, and increase the workload on that particular thing, for example if our hardware got delayed then 2 person start working on that part of the project
+
+How documentation will be maintained.
+
+Every time something changes,or we buy something or happens we update that on the designated section under the github repo and every couple of hours we upload the photo or our current progress
 
 ## 12.2 Task Breakdown
 
 | Task ID | Task                    | Owner    | Estimated Hours | Deadline     | Dependency | Status |
 | ------- | ----------------------- | -------- | ---------------:| ------------ | ---------- | ------ |
-| T1      | `[Finalize concept]`    | `[Both]` | `2`             | `1st April`  | `None`     | `Done` |
+| T1      | `[Finalize concept]`    | `[All]` | `1hr`             | `28st April`  | `None`     | `Done` |
+| T1      | `[Software]`            | `[Dhruv]` | `3hr`             | `28st April`  | `None`     | `Working` |
+| T1      | `[Connections]`    | `[Vansh]` | `2hr`             | `28st April`  | `None`     | `Done` |
+| T1      | `[Fabrication]`    | `[Yoshita]` | `1hr`             | `28st April`  | `None`     | `Done` |
+| T1      | `[Documention]`    | `[Poorab, Yoshita]` | `6hr`             | `28st April`  | `None`     | `Working` |
 
 
 ## 12.3 Responsibility Split
 
 | Area                 | Main Owner | Support Owner |
 | -------------------- | ---------- | ------------- |
-| Concept              | `[Gopal]`  | `[Kader]`    |
-| Electronics          | `[]`       | `[]`     |
-| Coding               | `[]`       | `[]`     |
-| Mechanical build     | `[]`       | `[]`    |
-| Testing              | `[]`       | `[]`    |
-| Documentation        | `[]`       | `[]`     |
+| Concept              | `[All]`  | `[]`    |
+| Electronics          | `[Vansh]`       | `[Yoshita]`     |
+| Coding               | `[Dhruv]`       | `[Vansh]`     |
+| Mechanical build     | `[Poorab]`       | `[]`    |
+| Testing              | `[Vansh]`       | `[]`    |
+| Documentation        | `[Yoshita]`       | `[Poorab]`     |
 
 ---
 
@@ -449,10 +471,11 @@ Expected outcomes:
 | ------ | -------------- | ---------------------- | -------------- | -------------- |
 | Hour 1 | `[Idea Finalized]` | `[Idea Finalized]`         | `[NA]` | `[Component Finalization]` |
 | Hour 2 | `[Component Finalization]` | `Components Finalized]`         | `[Shrike Lite not working]` | `[Connections]` |
-| Week 3 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
+| Hour 3 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
 | Week 4 | `[Write here]` | `[Write here]`         | `[Write here]` | `[Write here]` |
 
 Update 1: Basic connections started with fabrication.
+
 <img src="images/Update1_Testing.jpeg" width="400"/>
 <img src="images/Update1_Fabrication.jpeg" width="400"/>
 
@@ -510,34 +533,15 @@ What is the single biggest uncertainty in your project at this stage?
 
 ## 16.1 Fabrication Process
 
-Describe how the project was physically made.
-
-Include:
-
-- cutting,
-- 3D printing,
-- assembly,
-- fastening,
-- wiring,
-- finishing,
-- revisions.
 
 **Response:**  
-`The fabrication process involved designing, manufacturing, assembling, and refining both the physical structure and electronic integration of the system.`
+We began by designing the layout of the bomb box on paper, deciding the placement of each module (wires, buttons, sensor areas, display). 
 
-`Design (CAD Modeling):
-The initial model was created using CAD software, where components were designed based on the actual dimensions of the electronic parts. This ensured accurate fitting and minimized errors during assembly.
-Cutting (Laser Cutting):
-The designed parts were fabricated using laser cutting techniques. Sheets were cut precisely according to the CAD model to create the structural base and mounts for components.`
+Using cardboard as the base material, we cut and assembled a box structure that could securely hold all components.
 
-`Components were fixed using adhesives and mechanical supports. Certain parts were intentionally kept modular (not permanently fixed) to allow easy replacement and modification of electronics.
-Surface Finishing:
-Some parts were sanded to smooth rough edges after cutting. Sawdust mixed with adhesive was used to fill gaps and uneven edges, improving structural finish. The final structure was then painted for better aesthetics and durability.`
+Openings were created on the top surface for modules such as the wire-cut section, buttons, and sensors, while slots were made for mounting the LEDs.
 
-`Environment Setup (Dark Room Fabrication):
-To enhance projection visibility, a controlled dark environment was created using Z-boards, paper sheets, and bedsheets. This minimized external light interference and improved projection clarity.
-Revisions and Iterations:
-Multiple adjustments were made throughout the process, including refining alignment, improving structural stability, repositioning components, and optimizing the interaction between the physical car and projected environment.`
+All parts were fixed using glue and tape to ensure stability while still allowing quick adjustments if needed.
 
 ## 16.2 Build Photos
 
