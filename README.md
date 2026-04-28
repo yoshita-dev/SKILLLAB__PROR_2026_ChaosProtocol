@@ -237,7 +237,7 @@ Insert a hand-drawn or software-made circuit diagram.
 
 **Insert image below:**  
 `[Upload image and link here]`
-<img width="1600" height="1200"  alt="image" src="images/circuit diagram.jpeg" src="" />
+<img width="1600" height="1200"  alt="image" src="images/circuit diagram.png" src="" />
 
 
 # 9. Power Plan
