@@ -348,7 +348,7 @@ If your cost is too high, what can be simplified, removed, substituted, or share
 
 **Response:**  
 
----
+NA
 
 # 12. Planning the Work
 
