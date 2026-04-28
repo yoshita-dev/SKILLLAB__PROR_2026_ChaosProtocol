@@ -465,7 +465,7 @@ Update 3: completed with the circuit connections. We had problem with the workin
 <img src="images/Update2_connections complete.jpeg" width="400"/>
 
 UPDATE 4: We completed with our final working build.
-
+<img src="images/Update4.jpeg" width="400"/>
 
 ---
 
