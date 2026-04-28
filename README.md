@@ -18,6 +18,7 @@
 | `Vansh Lalwani`  | `[Electronics]`   | `[Coding]`     | `Hardware, Problem Solving`    |
 <img width="1600" height="1131" alt="image" src="images/Group Photo.jpeg" />
 https://youtube.com/shorts/R1lEeZ2L4As?feature=share
+
 ## 1.3 Project Title
 
 `"Defuse Or Die by Chaos Protocol"`
