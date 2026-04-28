@@ -531,16 +531,10 @@ All parts were fixed using glue and tape to ensure stability while still allowin
 Add photos throughout the project.
 
 Suggested images:
-
-- early sketch,
-- prototype,
-- electronics testing,
-- mechanism test,
-- app screenshot,
-- final build.
-- <img width="960" height="1280" alt="WhatsApp Image 2026-04-24 at 9 46 02 AM (1)" src="https://github.com/user-attachments/assets/74baa570-5770-483e-be6d-d2f03386e37c" />
-
-
+<img width="1600" height="1200"  alt="image" src="images/Early Sketch.jpeg" src="" />
+<img width="1600" height="1200"  alt="image" src="images/Project Design.jpeg" src="" />
+<img src="images/Update2_connections complete.jpeg" width="400"/>
+<img src="images/Update4.jpeg" width="400"/>
 
 
 
