@@ -37,7 +37,9 @@ In 1–2 paragraphs, explain:
 - what technologies are involved.
 
 **Response:**  
-`A projected and fully customizable time portal can transform engineering education into an immersive PUBG-style battlefield experience from the comfort of home. In this environment, students can learn engineering concepts by entering a virtual battlefield where challenges, obstacles, and missions are designed around real technical problems. Instead of passively studying theory, learners actively apply concepts such as electronics, coding, sensors, robotics, mechanics, and system design to complete missions, solve problems, and progress through different levels. This approach makes engineering education more interactive, engaging, and practical by combining gaming, simulation, and hands-on problem-solving in a familiar and exciting format.`
+`**Defuse or Die** is an interactive, team-based bomb defusal game inspired by Keep Talking and Nobody Explodes, built using cardboard modules, sensors, and a Raspberry Pi Pico programmed through the Arduino IDE. The system generates randomized but solvable puzzles—such as wire-cutting, timed button holds, and gas-level control using an MQ2 sensor—while displaying a live countdown and strike system on an I2C LCD. Players must physically interact with the device to solve each module, with feedback provided through LEDs and a buzzer.
+
+The experience is designed to create intense, fast-paced collaboration where one player (the defuser) handles the physical device while others (the experts) interpret instructions and guide them under time pressure. As the timer decreases, the buzzer frequency increases, building urgency and panic, while mistakes reduce available time and increase tension. By combining embedded systems, non-blocking Arduino programming, sensor integration, and tangible game design, the project delivers a highly engaging, real-world gaming experience that blends electronics, logic, and teamwork into a fun and memorable challenge.`
 
 ---
 
@@ -45,18 +47,9 @@ In 1–2 paragraphs, explain:
 
 ## 2.1 Experience, Not Social Problem
 
-This module does **not** require your project to solve a large social problem.
+*Problem Statement*
+Design an engaging, real-time interactive game system that challenges players to collaborate under pressure to solve physical puzzles, while efficiently integrating sensors, embedded systems, and dynamic feedback to create a seamless and immersive experience.
 
-You are allowed to build:
-
-- toys,
-- games,
-- interactive objects,
-- playful machines,
-- kinetic artifacts,
-- humorous devices,
-- strange but delightful experiences,
-- things that are entertaining to use or watch.
 
 
 
@@ -126,21 +119,21 @@ Check all that apply.
 
 - [x] Sensor-based
 
-- [x] App-connected
+- [ ] App-connected
 
-- [x] Motorized
+- [ ] Motorized
 
-- [ ] Sound-based
+- [x] Sound-based
 
 - [x] Light-based
 
 - [x] Screen/UI-based
 
-- [x] Fabricated structure
+- [ ] Fabricated structure
 
 - [x] Game logic based
 
-- [x] Installation
+- [ ] Installation
 
 - [ ] Other:
 
@@ -194,7 +187,7 @@ Add a sketch with labels showing:
 
 **Insert image below:**  
 `[Upload image and link here]`
-<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/95637f31-b4e7-4427-a9e1-4b63fbeb0ac5" />
+<img width="1600" height="1200" alt="image/Project Design.jpeg" src="" />
 
 ## 7.3 Approximate Dimensions
 
