@@ -61,7 +61,7 @@ List what inspired the project.
 
 | Source Type | Title / Link                                                        | What Inspired You                                                                         |
 | ----------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `[Video]`   | `https://www.instagram.com/reel/DW4CT7WCDry/?igsh=cXg3dzAxYmdncDBo` | `How projection mapping can be used to create interactive digital + physical experiences` |
+| `[Image]`   | `https://l1nk.dev/wwhlq4p` | `Inspired by Keep Talking and Nobody Explodes and escape-room challenges, the project brings high-pressure teamwork and puzzle-solving into a physical, sensor-based experience.` |
 |             |                                                                     |                                                                                           |
 |             |                                                                     |                                                                                           |
 
@@ -163,10 +163,8 @@ Include:
 
 ## 7.1 Concept Sketch
 
-Add an early sketch of the full idea.
-
 **Insert image below:**  
-<img width="1600" height="1200" alt="image/Early Sketch.jpeg" src="" />
+<img width="1600" height="1200" alt="images/Early Sketch.jpeg" src="" />
 
 Example:
 
@@ -178,17 +176,9 @@ Example:
 
 ## 7.2 Labeled Build Sketch
 
-Add a sketch with labels showing:
-
-- structure,
-- electronics placement,
-- user touch points,
-- moving parts,
-- output elements.
-
 **Insert image below:**  
 `[Upload image and link here]`
-<img width="1600" height="1200" alt="image/Project Design.jpeg" src="" />
+<img width="1600" height="1200" alt="images/Project Design.jpeg" src="" />
 
 ## 7.3 Approximate Dimensions
 
@@ -207,13 +197,15 @@ Add a sketch with labels showing:
 
 | Component                 | Quantity | Purpose                               |
 | ------------------------- | --------:| ------------------------------------- |
-| `[ESP32]`                 | `1`      | `[Main controller]`                   |
-| `[L298N Motor Driver]`    | `1`      | `[Control Motors]`                    |
-| `[BO Motors]`             | `2`      | `[Rotate wheels]`                     |
-| `[Buck Converter]`        | `1`      | `[Power ESP32]`                       |
-| `[Li Ion Battery Pack]`   | `2`      | `[Power]`                             |
-| `[Projector]`             | `1`      | `[Display obstacles]`                 |
-| `Camera (Webcam / Phone)` | `1`      | `[Tracks car position using markers]` |
+| `[Raspberry Pi Pico]`                 | `1`      | `[Main controller]`                   |
+| `[Buzzers]`    | `1`      | `[Alert]`                    |
+| `[LEDS]`             | `5`      | `[Indication]`                     |
+| `[I2C LCD Display]`        | `1`      | `[Display]`                       |
+| `[Push Buttons]`   | `4`      | `[Input]`                             |
+| `[MQ2 Sensor]`             | `1`      | `[Sensing]`                 |
+| `Breadboard` | `1`      | `[Prototyping]` |
+| `Touch Sensor` | `1`      | `[Detection]` |
+
 
 ## 8.2 Wiring Plan
 
