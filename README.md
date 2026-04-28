@@ -2,24 +2,6 @@
 
 ## Final Project README
 
-
-cess,
-- your build progress,
-- your testing,
-- your failures and changes,
-- your final outcome.
-
-## Rules
-
-- Fill every section.
-- Do not delete headings.
-- If something does not apply, write `Not applicable` and explain why.
-- Add images, screenshots, sketches, links, and videos wherever useful.
-- Update task status and weekly logs regularly.
-- Use this file as evidence of process, not only as a final report.
-
----
-
 # 1. Team Identity
 
 ## 1.1 Studio / Group Name
@@ -34,6 +16,7 @@ cess,
 | `Yoshita Vishwakarma`  | `[Design]`   | `[Documentation]`     | `Documentation, Project Design `    |
 | `Poorab Valecha`  | `[Electronics]`   | `[Documentation]`     | `Hardware, Material Handling`    |
 | `Vansh Lalwani`  | `[Electronics]`   | `[Coding]`     | `Hardware, Problem Solving`    |
+<img width="1600" height="1131" alt="image" src="images/Defuse or Die.png" />
 ## 1.3 Project Title
 
 `"Defuse Or Die by Chaos Protocol"`
