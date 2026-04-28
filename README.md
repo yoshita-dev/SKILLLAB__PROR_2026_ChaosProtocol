@@ -163,8 +163,9 @@ Include:
 
 ## 7.1 Concept Sketch
 
-**Insert image below:**  
-<img width="1600" height="1200" alt="images/Early Sketch.jpeg" src="" />
+**Insert image below:** 
+
+<img width="1600" height="1200"  alt="image" src="images/Early Sketch.jpeg" src="" />
 
 Example:
 
@@ -178,7 +179,7 @@ Example:
 
 **Insert image below:**  
 `[Upload image and link here]`
-<img width="1600" height="1200" alt="images/Project Design.jpeg" src="" />
+<img width="1600" height="1200"  alt="image" src="images/Project Design.jpeg" src="" />
 
 ## 7.3 Approximate Dimensions
 
